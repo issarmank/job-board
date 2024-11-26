@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#upload-section">Upload</a></li>
+                <li><a href="#filter-section">Filter & Sort</a></li>
+                <li><a href="#job-listings">Job Listings</a></li>
+            </ul>
+        </nav>
+        <h1>Job Analysis</h1>
+    </header>
+    
+    <main>
+        <section id="upload-section">
+            <h2>Upload Job Data</h2>
+            <input type="file" id="file-input" accept=".json">
+        </section>
+
+        <section id="filter-section">
+            <h2>Filter and Sort Jobs</h2>
+            <form id="filter-form">
+                <label for="job-level">Level:</label>
+                <select id="job-level">
+                    <option value="">All</option>
+                </select>
+
+                <label for="job-type">Type:</label>
+                <select id="job-type">
+                    <option value="">All</option>
+                </select>
+
+                <label for="job-skill">Skill:</label>
+                <select id="job-skill">
+                    <option value="">All</option>
+                </select>
+
+                <button type="button" id="apply-filters">Apply Filters</button>
+            </form>
+
+            <h2>Sort Jobs</h2>
+            <label for="sort-by">Sort by:</label>
+            <select id="sort-by">
+                <option value="title">Title</option>
+                <option value="postedTime">Posted Time</option>
+            </select>
+            <label for="sort-order">Order:</label>
+            <select id="sort-order">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+        </section>
+
+        <section id="job-listings">
+            <h2>Job Listings</h2>
+            <input type="text" id="search-input" placeholder="Search jobs...">
+            <ul id="job-list">
+                <!-- Job listings will be populated dynamically -->
+            </ul>
+        </section>
+    </main>
+
+    <div id="job-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="job-details"></div>
+        </div>
+    </div>
+
+    <script src="JobAnalysis.js"></script>
+</body>
+</html>
